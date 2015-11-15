@@ -210,4 +210,10 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+
+    // Saying Hello Action
+    public function actionSay($message = 'Hello')
+    {
+        return $this->render('say', ['message' => $message]);
+    }
 }
