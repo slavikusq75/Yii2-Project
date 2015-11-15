@@ -216,4 +216,15 @@ class SiteController extends Controller
     {
         return $this->render('say', ['message' => $message]);
     }
+
+    // Trying JSON response format
+    public function actionHifive() //Interesting, why "actionHiFive" name of method doesn't work(
+    {
+        \Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+        $names = [
+            'to' => ['John Smith', 'Harley Davidson', 'J\'R Rigs'],
+            'for' => ['John Smith', 'Harley Davidson', 'J\'R Rigs']
+        ];
+        return $names;
+    }
 }
