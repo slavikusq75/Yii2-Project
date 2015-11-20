@@ -16,7 +16,7 @@ class Song extends Model
     public function rules()
     {
         return [
-            [['songName'], 'required'],
+            [['songName'], 'required', 'message' => 'not valid'],
         ];
     }
 }
