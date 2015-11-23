@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use yii\captcha\Captcha;
 
 ?>
 
@@ -21,8 +22,6 @@ use yii\widgets\ActiveForm;
 
 <?= $form->field($model, 'articleTheme') ?>
 
-<?= $form->field($model, 'articleDate') ?>
-
 <?= $form->field($model, 'articleAuthor') ?>
 
 <?= $form->field($model, 'articleText') ?>
@@ -31,9 +30,15 @@ use yii\widgets\ActiveForm;
 
 <?= $form->field($model, 'articleSource') ?>
 
+<?= $form->field($model, 'articleCopyright') ?>
+
 <?= $form->field($model, 'password') ?>
 
 <?= $form->field($model, 'password_repeat') ?>
+
+<?= $form->field($model, 'captcha')->widget(\yii\captcha\Captcha::classname(), [
+    // configure additional widget properties here
+]) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Добавить статью', ['class' => 'btn btn-primary']) ?>
