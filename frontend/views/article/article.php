@@ -12,23 +12,23 @@ use yii\captcha\Captcha;
 
 <?= $form->field($model, 'username') ?>
 
-<?= $form->field($model, 'sex') ?>
+<?= $form->field($model, 'sex')->radioList(['1'=>'Мужской', '2'=>'Женский']) ?>
 
 <?= $form->field($model, 'age') ?>
 
 <?= $form->field($model, 'email') ?>
 
-<?= $form->field($model, 'siteCategory') ?>
+<?= $form->field($model, 'siteCategory')->dropDownList(['a' => 'Наука', 'b' => 'Исскуство', 'c' => 'Мода']) ?>
 
 <?= $form->field($model, 'articleTitle') ?>
 
-<?= $form->field($model, 'articleTheme') ?>
+<?= $form->field($model, 'articleTheme')->checkboxList(['a' => 'Наука', 'b' => 'Исскуство', 'c' => 'Мода']) ?>
 
 <?= $form->field($model, 'articleAuthor') ?>
 
 <?= $form->field($model, 'articleText') ?>
 
-<?= $form->field($model, 'articlePhoto') ?>
+<?= $form->field($model, 'articlePhoto')->fileInput() ?>
 
 <?= $form->field($model, 'articleSource') ?>
 
