@@ -8,15 +8,18 @@ use yii\captcha\Captcha;
 
     <h1><b>Форма добавления статьи:</h1><br>
 
-<?php $form = ActiveForm::begin(); ?>
+<?php $form = ActiveForm::begin([
+    'id' => 'article',
+]);
+?>
 
-<?= $form->field($model, 'username') ?>
+<?= $form->field($model, 'username', ['enableAjaxValidation' => true]) ?>
 
 <?= $form->field($model, 'sex')->radioList(['1'=>'Мужской', '2'=>'Женский']) ?>
 
 <?= $form->field($model, 'age') ?>
 
-<?= $form->field($model, 'email') ?>
+<?= $form->field($model, 'email', ['enableAjaxValidation' => true]) ?>
 
 <?= $form->field($model, 'siteCategory')->dropDownList(['a' => 'Наука', 'b' => 'Исскуство', 'c' => 'Мода']) ?>
 
@@ -26,7 +29,7 @@ use yii\captcha\Captcha;
 
 <?= $form->field($model, 'articleAuthor') ?>
 
-<?= $form->field($model, 'articleText') ?>
+<?= $form->field($model, 'articleText')->textarea() ?>
 
 <?= $form->field($model, 'articlePhoto')->fileInput() ?>
 
