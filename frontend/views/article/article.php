@@ -6,6 +6,8 @@ use yii\captcha\Captcha;
 
 ?>
 
+    <h1><b>Форма добавления статьи:</h1><br>
+
 <?php $form = ActiveForm::begin(); ?>
 
 <?= $form->field($model, 'username') ?>
@@ -30,15 +32,14 @@ use yii\captcha\Captcha;
 
 <?= $form->field($model, 'articleSource') ?>
 
-<?= $form->field($model, 'articleCopyright') ?>
+<?= $form->field($model, 'articleCopyright')->textInput()->hint('Да или нет') ?>
 
-<?= $form->field($model, 'password') ?>
+<?= $form->field($model, 'password')->textInput()->hint('Используется для доступа к редактированию статьи в будущем') ?>
 
 <?= $form->field($model, 'password_repeat') ?>
 
-<?= $form->field($model, 'captcha')->widget(\yii\captcha\Captcha::classname(), [
-    // configure additional widget properties here
-]) ?>
+<?= $form->field($model, 'captcha')->textInput()->hint('Кликните по картинке, чтобы обновить код')->
+widget(\yii\captcha\Captcha::classname(), []) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Добавить статью', ['class' => 'btn btn-primary']) ?>
