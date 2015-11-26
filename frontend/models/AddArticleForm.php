@@ -55,7 +55,6 @@ class AddArticleForm extends Model
                     'siteCategory',
                     'articleTitle',
                     'articleTheme',
-                    'articleDate',
                     'articleAuthor',
                     'articleText',
                     'password',

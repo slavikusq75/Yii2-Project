@@ -5,6 +5,8 @@ namespace frontend\controllers;
 use Yii;
 use yii\web\Controller;
 use app\models\AddArticleForm;
+use yii\web\Response;
+use yii\widgets\ActiveForm;
 
 class ArticleController extends Controller
 {
@@ -12,7 +14,9 @@ class ArticleController extends Controller
     {
         $model = new AddArticleForm();
 
-        if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post()) && $model->validate()) {
+        if (Yii::$app->request->isAjax) {
+            $model->load(Yii::$app->request->post());
+            $model->validate();
             Yii::$app->response->format = Response::FORMAT_JSON;
             return ActiveForm::validate($model);
         } elseif ($model->load(Yii::$app->request->post()) && $model->validate()) {
